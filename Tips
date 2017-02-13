@@ -8,7 +8,6 @@ console.log(newArray.slice(newArray.length-1)) //[4]
 console.log(newArray.slice(-2,-1)) //[3]
 console.log(newArray.slice(-4)) [1,2,3,4];
 
-
 #2 短路条件句
 如果你想在某个条件逻辑值为true时，执行某个函数，就像这样：
 if (condition) {
@@ -18,18 +17,23 @@ if (condition) {
 这时，你可以这样子运用短路：
 condition && dosomething()
 
-
-
 #3用操作符 “||” 来设置默认值
 如果你必须给一个变量赋默认值，可以简单的这样写：
 var a
-
 console.log(a) // undefined
-
 a = a || 'default value'
-
 console.log(a) // default value
-
 a = a || 'new value'
-
 console.log(a) // default value
+
+#4  foreach 函数跳出函数
+.some是一个原型方法。他用来检测是否某些元素满足所提供的函数。如果任何元素最终返回true，类似break，如果返回false ，类似continue.
+const a = [0, 1, 2, 3, 4];
+a.some(function(val, i) {
+if (val === 2) {
+return false;// contine
+}
+console.log(val); // your code
+});
+
+
